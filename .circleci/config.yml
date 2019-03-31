@@ -8,6 +8,10 @@ workflows:
   nightly:
     triggers:
       - schedule:
-        cron: '0,15,30,45 * * * *'
+          cron: '0,15,30,45 * * * *'
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - cypress/run
